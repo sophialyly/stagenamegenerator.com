@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stage Name Generator</title>
+	<style type="text/css">
+	body
+	{
+		font-family: courier;		
+		margin: 0px;
+		padding: 0px;
+		text-align: center;
+		background-color: 
+	}
+
+	h1
+	{
+		margin: 0px;
+		padding: 10px;
+		background-color: black;
+		color: white;
+	}
+
+	.stageName
+	{
+		margin: 100px;
+		font-weight: bold;
+		font-size: 4em;
+	}
+	</style>
+</head>
+<body>
+<script src="./js/jquery-2.1.1.min.js"></script>
+<h1>Stage Name Generator</h1>
+<div class="stageName" id="name">Click the button</div>
+<button id="generate">Generate</button>
+<script>
+	var numberOfNames = 21985;
+	var numberOfAdjectives = 113808;
+	var generateSelector = '#generate';
+	var stageNameSelector = '#name';
+	var namesDirectory = 'names/';
+	var adjectivesDirectory = 'adjectives/';
+	var error = 'Error';
+
+	$(generateSelector).on('click', function()
+	{
+		$(stageNameSelector).text(getName().toUpperCase() + ' ' + getAdjective().toUpperCase());
+	});
+
+	function getName()
+	{
+		var name = error;
+		var nameNumber = Math.floor(Math.random() * numberOfNames);
+
+		$.ajax(
+		{
+		async: false,
+		url: namesDirectory + nameNumber,
+		success: function(data) 
+			{
+				name = data;
+			}
+		});
+
+		return name;
+	}
+
+	function getAdjective()
+	{	
+		var adjective = error;
+		var adjectiveNumber = Math.floor(Math.random() * numberOfAdjectives);
+		
+		$.ajax(
+		{
+		async: false,
+		url: adjectivesDirectory + adjectiveNumber,
+		success: function(data) 
+			{
+				adjective = data;
+			}
+		});
+
+		return adjective;
+	}
+</script>
+</body>
+</html>
