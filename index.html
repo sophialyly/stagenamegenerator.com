@@ -5,34 +5,62 @@
 	<style type="text/css">
 	body
 	{
-		font-family: courier;		
+		font-family: sans;		
 		margin: 0px;
 		padding: 0px;
 		text-align: center;
-		background-color: 
+		background-color: black;
+		color: white;
 	}
 
 	h1
 	{
 		margin: 0px;
 		padding: 10px;
-		background-color: black;
-		color: white;
 	}
 
-	.stageName
+	.content
 	{
-		margin: 100px;
+		padding: 50px;
+		color: black;
+		background-color: white;
+	}
+
+	.name
+	{
 		font-weight: bold;
 		font-size: 4em;
+	}
+
+	.footer
+	{
+		padding: 20px;
+		font-size: 0.7em;
+		border-top: 1px solid black;
+	}
+
+	.generateButton
+	{
+		font-weight: bold;
+		padding: 10px;
+		margin: 50px 0px 0px 0px;
+	}
+
+	a
+	{
+		color: white;
+		text-decoration: none;
+		border-bottom: 1px solid;
 	}
 	</style>
 </head>
 <body>
 <script src="./js/jquery-2.1.1.min.js"></script>
 <h1>Stage Name Generator</h1>
-<div class="stageName" id="name">Click the button</div>
-<button id="generate">Generate</button>
+<div class="content">
+<div id="name" class="name">Click the button</div>
+<button class="generateButton" id="generate">Generate</button>
+</div>
 <script>
 	var numberOfNames = 21985;
 	var numberOfAdjectives = 113808;
@@ -83,5 +111,8 @@
 		return adjective;
 	}
 </script>
+<div class="footer">
+2014 <a href="http://www.tsk.bz/">Tyler Keddy</a>
+</div>
 </body>
 </html>
