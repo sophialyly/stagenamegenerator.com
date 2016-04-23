@@ -13,8 +13,16 @@
 <div class="container text-center" style="padding-top: 100px;">
 	<div class="lead">Stage Name Generator</div>	
 	<hr>
-	<h1><div id="name" style="padding: 20px;"></div></h1>
-	<button class="btn btn-success" id="generate">Generate</button>
+	<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left">
+		<p class="text-left">Share your stage name: </p>
+		<a class="a2a_button_facebook"></a>
+		<a class="a2a_button_twitter"></a>
+		<a class="a2a_button_google_plus"></a>
+		<a class="a2a_button_reddit"></a>
+		<a class="a2a_button_email"></a>
+    </div>
+	<h1><div id="name" style="padding: 100px;"></div></h1>
+	<button class="btn btn-success" id="generate" style="margin-bottom: 30px;">Generate</button>
 	<hr>
 	<footer class="footer text-muted">
 		<small>
@@ -35,8 +43,12 @@
 
 	$(generateSelector).on('click', function()
 	{
-		$(stageNameSelector).text(getName().toUpperCase() + ' ' + getAdjective().toUpperCase());
+		generate();
 	});
+
+	function generate() {
+		$(stageNameSelector).text(getName().toUpperCase() + ' ' + getAdjective().toUpperCase());
+	}
 
 	function getName()
 	{
@@ -73,6 +85,9 @@
 
 		return adjective;
 	}
+	
+	generate();
+	
 </script>
 
 <!-- begin tracking code -->
@@ -89,6 +104,14 @@
 <!-- end tracking code -->
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<!-- add to any config -->
+<script>
+var a2a_config = a2a_config || {};
+a2a_config.linkname = 'My stage name is ' + $('#name').text() + '.  What\'s yours?';
+</script>
+<script src="https://static.addtoany.com/menu/page.js"></script>
+<!-- end add to any config -->
 
 </body>
 </html>
