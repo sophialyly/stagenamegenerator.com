@@ -9,11 +9,14 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 </head>
 <body>
+
+<script src="https://static.addtoany.com/menu/page.js"></script>
+
 <script src="./js/jquery-2.1.1.min.js"></script>
 <div class="container text-center" style="padding-top: 100px;">
 	<div class="lead">Stage Name Generator</div>	
 	<hr>
-	<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left">
+	<div id="social" class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left">
 		<p class="text-left">Share your stage name: </p>
 		<a class="a2a_button_facebook"></a>
 		<a class="a2a_button_twitter"></a>
@@ -33,22 +36,12 @@
 	</footer>
 </div>
 
-<!-- add to any config -->
-<script>
-var a2a_config = a2a_config || {};
-function updateSocialMediaLinkName() {
-	a2a_config.linkname = 'My stage name is ' + $('#name').text() + '.  What\'s yours?';
-}
-
-</script>
-<script src="https://static.addtoany.com/menu/page.js"></script>
-<!-- end add to any config -->
-
 <script>
 	var numberOfNames = 21985;
 	var numberOfAdjectives = 113808;
 	var generateSelector = '#generate';
 	var stageNameSelector = '#name';
+	var socialSelector = '#social';
 	var namesDirectory = 'names/';
 	var adjectivesDirectory = 'adjectives/';
 	var error = 'Error';
@@ -59,8 +52,9 @@ function updateSocialMediaLinkName() {
 	});
 
 	function generate() {
-		$(stageNameSelector).text(getName().toUpperCase().trim() + ' ' + getAdjective().toUpperCase().trim());
-		updateSocialMediaLinkName();
+		var name = getName().toUpperCase().trim() + ' ' + getAdjective().toUpperCase().trim();
+		$(stageNameSelector).text(name);
+		$(socialSelector).attr('data-a2a-title', "My stage name is " + name + ", what's yours?");
 	}
 
 	function getName()
