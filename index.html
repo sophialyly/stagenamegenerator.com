@@ -1,65 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Stage Name Generator</title>
-	<style type="text/css">
-	body
-	{
-		font-family: sans;		
-		margin: 0px;
-		padding: 0px;
-		text-align: center;
-		background-color: black;
-		color: white;
-	}
-
-	h1
-	{
-		margin: 0px;
-		padding: 10px;
-	}
-
-	.content
-	{
-		padding: 50px;
-		color: black;
-		background-color: white;
-	}
-
-	.name
-	{
-		font-weight: bold;
-		font-size: 4em;
-	}
-
-	.footer
-	{
-		padding: 20px;
-		font-size: 0.7em;
-		border-top: 1px solid black;
-	}
-
-	.generateButton
-	{
-		font-weight: bold;
-		padding: 10px;
-		margin: 50px 0px 0px 0px;
-	}
-
-	a
-	{
-		color: white;
-		text-decoration: none;
-		border-bottom: 1px solid;
-	}
-	</style>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage Name Generator</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 </head>
 <body>
 <script src="./js/jquery-2.1.1.min.js"></script>
-<h1>Stage Name Generator</h1>
-<div class="content">
-<div id="name" class="name">Click the button</div>
-<button class="generateButton" id="generate">Generate</button>
+<div class="container text-center" style="padding-top: 100px;">
+	<div class="lead">Stage Name Generator</div>	
+	<hr>
+	<h1><div id="name" style="padding: 20px;"></div></h1>
+	<button class="btn btn-success" id="generate">Generate</button>
+	<hr>
+	<footer class="footer text-muted">
+		<small>
+			Copyright &copy; 2014-2016 <a href="http://www.tsk.bz/">Tyler Keddy</a><br>
+			Privacy Policy: This website uses cookies to collect data. This website uses Google Analytics. 
+			<a href="https://www.google.com/policies/privacy/partners/">How does Google Analytics collect and use data?</a>
+		</small>
+	</footer>
 </div>
 <script>
 	var numberOfNames = 21985;
@@ -111,10 +74,6 @@
 		return adjective;
 	}
 </script>
-<div class="footer">
-Copyright &copy; 2014-2016 <a href="http://www.tsk.bz/">Tyler Keddy</a><br>
-Privacy Policy: This website uses cookies to collect data. This website uses Google Analytics. <a href="https://www.google.com/policies/privacy/partners/">How does Google Analytics collect and use data?</a>
-</div>
 
 <!-- begin tracking code -->
 <script>
@@ -128,6 +87,8 @@ Privacy Policy: This website uses cookies to collect data. This website uses Goo
 
 </script>
 <!-- end tracking code -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
 </body>
 </html>
