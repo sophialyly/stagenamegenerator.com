@@ -26,12 +26,24 @@
 	<hr>
 	<footer class="footer text-muted">
 		<small>
-			Copyright &copy; 2014-2016 <a href="http://www.tsk.bz/">Tyler Keddy</a> - <a href="http://goo.gl/forms/wCuZJU50X0">Contact Me</a><br>
+			<a href="http://goo.gl/forms/wCuZJU50X0">Contact Me</a><br>
 			Privacy Policy: This website uses cookies to collect data. This website uses Google Analytics. 
 			<a href="https://www.google.com/policies/privacy/partners/">How does Google Analytics collect and use data?</a>
 		</small>
 	</footer>
 </div>
+
+<!-- add to any config -->
+<script>
+var a2a_config = a2a_config || {};
+function updateSocialMediaLinkName() {
+	a2a_config.linkname = 'My stage name is ' + $('#name').text() + '.  What\'s yours?';
+}
+
+</script>
+<script src="https://static.addtoany.com/menu/page.js"></script>
+<!-- end add to any config -->
+
 <script>
 	var numberOfNames = 21985;
 	var numberOfAdjectives = 113808;
@@ -48,6 +60,7 @@
 
 	function generate() {
 		$(stageNameSelector).text(getName().toUpperCase().trim() + ' ' + getAdjective().toUpperCase().trim());
+		updateSocialMediaLinkName();
 	}
 
 	function getName()
@@ -104,14 +117,6 @@
 <!-- end tracking code -->
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<!-- add to any config -->
-<script>
-var a2a_config = a2a_config || {};
-a2a_config.linkname = 'My stage name is ' + $('#name').text() + '.  What\'s yours?';
-</script>
-<script src="https://static.addtoany.com/menu/page.js"></script>
-<!-- end add to any config -->
 
 </body>
 </html>

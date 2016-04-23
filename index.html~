@@ -13,18 +13,37 @@
 <div class="container text-center" style="padding-top: 100px;">
 	<div class="lead">Stage Name Generator</div>	
 	<hr>
-	
-	<h1><div id="name" style="padding: 20px;"></div></h1>
-	<button class="btn btn-success" id="generate">Generate</button>
+	<div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left">
+		<p class="text-left">Share your stage name: </p>
+		<a class="a2a_button_facebook"></a>
+		<a class="a2a_button_twitter"></a>
+		<a class="a2a_button_google_plus"></a>
+		<a class="a2a_button_reddit"></a>
+		<a class="a2a_button_email"></a>
+    </div>
+	<h1><div id="name" style="padding: 100px;"></div></h1>
+	<button class="btn btn-success" id="generate" style="margin-bottom: 30px;">Generate</button>
 	<hr>
 	<footer class="footer text-muted">
 		<small>
-			Copyright &copy; 2014-2016 <a href="http://www.tsk.bz/">Tyler Keddy</a><br>
+			Copyright &copy; 2014-2016 <a href="http://www.tsk.bz/">Tyler Keddy</a> - <a href="http://goo.gl/forms/wCuZJU50X0">Contact Me</a><br>
 			Privacy Policy: This website uses cookies to collect data. This website uses Google Analytics. 
 			<a href="https://www.google.com/policies/privacy/partners/">How does Google Analytics collect and use data?</a>
 		</small>
 	</footer>
 </div>
+
+<!-- add to any config -->
+<script>
+var a2a_config = a2a_config || {};
+function updateSocialMediaLinkName() {
+	a2a_config.linkname = 'My stage name is ' + $('#name').text() + '.  What\'s yours?';
+}
+
+</script>
+<script src="https://static.addtoany.com/menu/page.js"></script>
+<!-- end add to any config -->
+
 <script>
 	var numberOfNames = 21985;
 	var numberOfAdjectives = 113808;
@@ -36,8 +55,13 @@
 
 	$(generateSelector).on('click', function()
 	{
-		$(stageNameSelector).text(getName().toUpperCase() + ' ' + getAdjective().toUpperCase());
+		generate();
 	});
+
+	function generate() {
+		$(stageNameSelector).text(getName().toUpperCase().trim() + ' ' + getAdjective().toUpperCase().trim());
+		updateSocialMediaLinkName();
+	}
 
 	function getName()
 	{
@@ -74,6 +98,9 @@
 
 		return adjective;
 	}
+	
+	generate();
+	
 </script>
 
 <!-- begin tracking code -->
