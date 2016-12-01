@@ -10,20 +10,10 @@
 </head>
 <body>
 
-<script src="https://static.addtoany.com/menu/page.js"></script>
-
 <script src="./js/jquery-2.1.1.min.js"></script>
 <div class="container text-center" style="padding-top: 100px;">
 	<div class="lead">Stage Name Generator</div>	
 	<hr>
-	<div id="social" class="a2a_kit a2a_kit_size_32 a2a_default_style" style="float: left">
-		<p class="text-left">Share your stage name: </p>
-		<a class="a2a_button_facebook"></a>
-		<a class="a2a_button_twitter"></a>
-		<a class="a2a_button_google_plus"></a>
-		<a class="a2a_button_reddit"></a>
-		<a class="a2a_button_email"></a>
-    </div>
 	<h1><div id="name" style="padding: 100px;"></div></h1>
 	<button class="btn btn-success" id="generate" style="margin-bottom: 30px;">Generate</button>
 	<hr>
@@ -34,7 +24,6 @@
 	var numberOfAdjectives = 113808;
 	var generateSelector = '#generate';
 	var stageNameSelector = '#name';
-	var socialSelector = '#social';
 	var namesDirectory = 'names/';
 	var adjectivesDirectory = 'adjectives/';
 	var error = 'Error';
@@ -47,7 +36,6 @@
 	function generate() {
 		var name = getName().toUpperCase().trim() + ' ' + getAdjective().toUpperCase().trim();
 		$(stageNameSelector).text(name);
-		$(socialSelector).attr('data-a2a-title', "My stage name is " + name + ", what's yours?");
 	}
 
 	function getName()
